@@ -1,6 +1,13 @@
 const currentPlayer = document.querySelector('.currentPlayer');
 
-let selected;
+const caixa = document.querySelector("main");
+
+const music = new Audio("./sound/audio.mp3");
+music.volume = 0.2;
+
+caixa.addEventListener('mouseover', ()=>music.play());
+
+let selected = "";
 let player = "X";
 
 let positions = [
@@ -57,7 +64,7 @@ function check() {
         }
     }
 
-    if (selected.filter((item) => item).length === 9) {
+        if (selected.filter((item) => item).length === 9) {
         alert("Deu empate!");
         init();
         return;
