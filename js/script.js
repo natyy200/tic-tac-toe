@@ -51,7 +51,15 @@ function check() {
 
     for (pos of positions) {
         if (pos.every((item) => items.includes(item))) {
-            alert("O jogador '" + playerLastMove + "' Ganhou!")
+            alert("O jogador '" + playerLastMove + "' Ganhou!");
+            init();
+            return;
         }
+    }
+
+    if (selected.filter((item) => item).length === 9) {
+        alert("Deu empate!");
+        init();
+        return;
     }
 }
